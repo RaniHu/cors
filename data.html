@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<h1 id="test">我是要获取的数据</h1>
+<script type="text/javascript">
+	/*1.修改document.domain来跨子域*/
+	// document.domain="test.com";
+
+	/*2.使用window.name来跨域*/
+	// window.name="我是想要获取的data";
+	// alert(window.name);
+	/*4.使用postMessage*/
+	window.onmessage=function (e) {     //注册message事件来接收消息
+		e=e||event;						 //获取事件对象
+		alert(e.data)					 //通过data属性得到传送的消息
+	}
+</script>
+</body>
+</html>
